@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   nginx:
-    image: wolfofbad/nginx:1.1
+    image: nginx-image:latest
     ports:
       - "80:80"
       - "443:443"
@@ -12,7 +12,7 @@ services:
       - ./certs:/etc/letsencrypt
 
   apache:
-    image: wolfofbad/apache:1.0
+    image: apache-image:latest
     networks:
       - test
 
