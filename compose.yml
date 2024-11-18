@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: wolfofbad/nginx:1.1
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - test
+    volumes:
+      - ./certs:/etc/letsencrypt
+
+  apache:
+    image: wolfofbad/apache:1.0
+    networks:
+      - test
+
+networks:
+  test:
+    driver: bridge
