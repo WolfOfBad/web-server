@@ -7,7 +7,7 @@ services:
     networks:
       - test
     volumes:
-      - ./certs/letsencrypt:/etc/letsencrypt
+      - /home/user/certs/letsencrypt:/etc/letsencrypt
 
   apache:
     image: apache-image:latest
