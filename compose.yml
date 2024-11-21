@@ -5,15 +5,15 @@ services:
       - "80:80"
       - "443:443"
     networks:
-      - test
+      - net
     volumes:
-      - /home/user/certs/letsencrypt:/etc/letsencrypt
+      - /home/user/webserver/certs:/etc/letsencrypt
 
   apache:
     image: apache-image:latest
     networks:
-      - test
+      - net
 
 networks:
-  test:
+  net:
     driver: bridge
